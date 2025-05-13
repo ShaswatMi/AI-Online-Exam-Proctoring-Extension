@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "Socket.IO Chrome Extension",
+    "version": "1.0",
+    "background": {
+    "service_worker": "background.js"
+  },
+    "permissions": [
+      "activeTab",
+      "scripting"
+    ],
+    "host_permissions": [
+      "http://localhost:3000/*",
+      "https://www.example.com/*"
+    ],
+    "content_security_policy": {
+      
+        "script-src": "'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:*",
+        "object-src": "'self'"
+      
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.example.com/*"],
+        "js": ["dist/content.bundle.js"]
+      }
+    ],
+    "action": {
+      "default_title": "Toggle Fullscreen Mode"
+    }
+  }
+  
