@@ -46,7 +46,6 @@ const createFullscreenButton = () => {
     document.body.appendChild(fullscreenButton);
 };
 
-// Remove the fullscreen button
 const removeFullscreenButton = () => {
     if (fullscreenButton && fullscreenButton.parentNode) {
         fullscreenButton.parentNode.removeChild(fullscreenButton);
@@ -54,14 +53,11 @@ const removeFullscreenButton = () => {
     }
 };
 
-// Check if we should show the button automatically
 const shouldShowButton = () => {
-    // Show on example.com domains automatically
     const isExampleDomain = window.location.hostname.includes('example.com');
     return isExampleDomain;
 };
 
-// Listen for messages from the background script
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.action === 'showFullscreenButton') {
         createFullscreenButton();
@@ -71,7 +67,6 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     return true;
 });
 
-// Add the button once the DOM is fully loaded if on example.com
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
         if (shouldShowButton()) {
@@ -206,7 +201,6 @@ document.addEventListener("fullscreenchange", () => {
     }
 });
 
-// Also add these alternative event listeners for better cross-browser support
 document.addEventListener("webkitfullscreenchange", () => {
     try {
         if (document.webkitFullscreenElement) {
@@ -258,3 +252,28 @@ document.addEventListener("keydown", (event) => {
         exitFullScreen();
     }
 });
+
+
+  
+  
+let mouseMovements = [];
+
+document.addEventListener('mousemove', function (event) {
+  const timestamp = Date.now();
+  mouseMovements.push({
+    x: event.clientX,
+    y: event.clientY,
+    time: timestamp
+  });
+  // Optionally, limit array size to avoid memory issues
+  // if (mouseMovements.length > 1000) mouseMovements.shift();
+});
+
+setInterval(() => {
+  if (mouseMovements.length > 0) {
+    socket.emit('mouseEvents', { mouseMovements });
+    mouseMovements = [];
+  }
+}, 5000);
+
+
