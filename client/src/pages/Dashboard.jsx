@@ -5,7 +5,7 @@ import io from "socket.io-client";
 import { User, Star } from 'lucide-react'
 
 
-const socket = io("http://localhost:8000");
+const socket = io("https://ai-online-exam-proctoring-extension-mmmt.onrender.com/");
 
 export default function Dashboard() {
   const [searchTerm, setSearchTerm] = useState("");

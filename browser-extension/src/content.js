@@ -8,16 +8,14 @@ let cutCount = 0;
 let fullscreenCount = 0;
 let fullscreenButton = null;
 
-const socket = io('http://localhost:8000');
+const socket = io('https://ai-online-exam-proctoring-extension-mmmt.onrender.com/');
 console.log(socket);
 
 let typingStartTime = 0;
 let typingCharacterCount = 0;
 let typingInterval;
 
-// Create a fullscreen toggle button
 const createFullscreenButton = () => {
-    // Don't create multiple buttons
     if (fullscreenButton) return;
     
     fullscreenButton = document.createElement('button');

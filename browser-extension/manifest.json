@@ -16,7 +16,7 @@
     ],
     "content_security_policy": {
       
-        "script-src": "'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:*",
+        "script-src": "'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* https://ai-online-exam-proctoring-extension-mmmt.onrender.com/",
         "object-src": "'self'"
       
     },
