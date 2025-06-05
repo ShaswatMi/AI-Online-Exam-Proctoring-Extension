@@ -29,19 +29,11 @@ This project is ideal for educational institutions, certification providers, or 
 
 ### Access the Admin Dashboard
 
-- Visit the dashboard at: [https://ai-online-exam-proctoring-extension.onrender.com/admin](https://ai-online-exam-proctoring-extension.onrender.com/admin)
+- Visit the dashboard at: [Admin Dashboard](https://ai-online-exam-proctoring-extension.onrender.com/admin)
 
 ### Add the Browser Extension
 
-To add the browser extension to Chrome (or any Chromium-based browser):
-
-1. Open Chrome and go to `chrome://extensions/`.
-2. Enable **Developer mode** (toggle in the top right corner).
-3. Click **Load unpacked**.
-4. Select the `browser-extension/` folder from this project.
-5. The extension should now appear in your extensions list and be ready for use.
-
-> **Note:** If you make changes to the extension code, you may need to click the "Reload" button on the extension card in `chrome://extensions/`.
+- Visit the Chrome Web Store at: [Browser Extension](https://chromewebstore.google.com/detail/ai-online-assessment-prot/miclahaihmkokafihkmhnbjdadlblmhc?authuser=0&hl=en-GB)
 
 ### Testing the Extension
 
